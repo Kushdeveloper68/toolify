@@ -14,7 +14,7 @@
 
 PDF tools · Image tools · Video tools · Data converters · Calculators · Security tools · Business tools — everything runs 100% in your browser.
 
-[🚀 Live Demo](https://github.com/Kushdeveloper68/toolify) · [📖 Documentation](#getting-started) · [🐛 Report Bug](../../issues) · [✨ Request Feature](../../issues)
+[🚀 Live Demo](https://kushdeveloper68.github.io/toolify/) · [📖 Documentation](#getting-started) · [🐛 Report Bug](../../issues) · [✨ Request Feature](../../issues)
 
 ---
 
