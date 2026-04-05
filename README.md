@@ -8,6 +8,10 @@
 
 # ⚡ Toolify
 
+<div align="center">
+  <img src="assets/banner.png" alt="Toolify Homepage" width="100%" />
+</div>
+
 ### 60+ Free Online Tools — All in One Place
 
 **No signup. No account. No backend. No cost. Just tools.**
