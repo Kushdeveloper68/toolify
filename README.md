@@ -14,7 +14,7 @@
 
 PDF tools · Image tools · Video tools · Data converters · Calculators · Security tools · Business tools — everything runs 100% in your browser.
 
-[🚀 Live Demo](#) · [📖 Documentation](#getting-started) · [🐛 Report Bug](../../issues) · [✨ Request Feature](../../issues)
+[🚀 Live Demo](https://github.com/Kushdeveloper68/toolify) · [📖 Documentation](#getting-started) · [🐛 Report Bug](../../issues) · [✨ Request Feature](../../issues)
 
 ---
 
@@ -37,7 +37,7 @@ Most online tool websites are cluttered with ads, paywalls, file size limits, an
 | 🔒 Privacy | ✅ Files never leave your device | ❌ Uploaded to servers |
 | 📶 Works Offline | ✅ After first load | ❌ Server dependent |
 | 📦 No File Size Limit | ✅ Limited by your RAM | ❌ Usually 5–25 MB cap |
-| 🚫 No Ads | ✅ Zero ads | ❌ Ad-heavy |
+<!-- | 🚫 No Ads | ✅ Zero ads | ❌ Ad-heavy | -->
 | 🌐 No Backend | ✅ Pure client-side | ❌ Server processing |
 | 📖 Open Source | ✅ MIT Licensed | ❌ Proprietary |
 
@@ -154,10 +154,10 @@ git clone https://github.com/YOUR_USERNAME/toolify.git
 cd toolify
 
 # 3. Install dependencies
-npm install
+pnpm install
 
 # 4. Start the development server
-npm run dev
+pnpm run dev
 ```
 
 Open [http://localhost:5173](http://localhost:5173) in your browser.
@@ -166,10 +166,10 @@ Open [http://localhost:5173](http://localhost:5173) in your browser.
 
 ```bash
 # Build optimized static files
-npm run build
+pnpm run build
 
 # Preview the production build locally
-npm run preview
+pnpm run preview
 ```
 
 The `dist/` folder contains your fully static website — deploy anywhere (Vercel, Netlify, GitHub Pages, Cloudflare Pages, etc.)
@@ -526,7 +526,7 @@ all copies or substantial portions of the Software.
 
 If Toolify saved you time, consider giving it a ⭐ — it helps more people discover the project!
 
-[![GitHub stars](https://img.shields.io/github/stars/YOUR_USERNAME/toolify?style=social)](../../stargazers)
-[![GitHub forks](https://img.shields.io/github/forks/YOUR_USERNAME/toolify?style=social)](../../forks)
+[![GitHub stars](https://img.shields.io/github/stars/Kushdeveloper68/toolify?style=social)](../../stargazers)
+[![GitHub forks](https://img.shields.io/github/forks/Kushdeveloper68/toolify?style=social)](../../forks)
 
 </div>
