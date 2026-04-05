@@ -96,7 +96,7 @@ export default function App() {
       <Layout>
         <Routes>
           <Route path="/toolify" element={<Home />} />
-          <Route path="/tools/json-to-csv" element={<JsonToCsv />} />
+          <Route path="/toolify/tools/json-to-csv" element={<JsonToCsv />} />
           <Route path="/tools/csv-to-json" element={<CsvToJson />} />
           <Route path="/tools/excel-to-csv" element={<ExcelToCsv />} />
           <Route path="/tools/csv-to-excel" element={<CsvToExcel />} />
