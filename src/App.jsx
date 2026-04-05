@@ -72,13 +72,16 @@ import BusinessCard from './pages/tools/BusinessCard';
 import TimeTracker from './pages/tools/TimeTracker';
 
 function Layout({ children }) {
-  const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [sidebarOpen, setSidebarOpen] = useState(() => {
+    if (typeof window === 'undefined') return true;
+    return window.innerWidth >= 1024;
+  });
   return (
     <div className="min-h-screen flex flex-col">
       <Navbar sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen} />
       <div className="flex flex-1 pt-14">
         <Sidebar open={sidebarOpen} setOpen={setSidebarOpen} />
-        <main className="flex-1 min-w-0 p-4 md:p-6 transition-all duration-300 lg:ml-[240px]">
+        <main className={`flex-1 min-w-0 p-4 md:p-6 transition-all duration-300 ${sidebarOpen ? 'lg:ml-[240px]' : 'lg:ml-0'}`}>
           {children}
           <Footer />
         </main>

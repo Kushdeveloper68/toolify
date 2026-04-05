@@ -1,11 +1,9 @@
 import { Link, useLocation } from 'react-router-dom';
 import { Sun, Moon, Menu, X, Zap, Search } from 'lucide-react';
 import { useDarkMode } from '../../hooks/useDarkMode';
-import { useState } from 'react';
 
 export default function Navbar({ sidebarOpen, setSidebarOpen }) {
   const [darkMode, setDarkMode] = useDarkMode();
-  const location = useLocation();
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-white/90 dark:bg-gray-950/90 backdrop-blur-md border-b border-gray-200 dark:border-gray-800 h-14">
@@ -21,7 +19,7 @@ export default function Navbar({ sidebarOpen, setSidebarOpen }) {
           className="btn-ghost p-2 hidden lg:flex"
           title="Toggle sidebar"
         >
-          <Menu size={18} />
+          {sidebarOpen ? <X size={18} /> : <Menu size={18} />}
         </button>
 
         <Link to="/" className="flex items-center gap-2 font-bold text-lg text-gray-900 dark:text-white">

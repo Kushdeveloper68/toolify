@@ -1,11 +1,11 @@
-import { NavLink, useLocation } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { tools, toolCategories } from '../../data/tools';
 import * as Icons from 'lucide-react';
-import { useState, useEffect } from 'react';
-import { ChevronDown, ChevronRight } from 'lucide-react';
+import { useState } from 'react';
+import { ChevronDown, ChevronRight, ChevronsLeft, ChevronsRight } from 'lucide-react';
 
 const CategorySection = ({ category, tools: catTools, collapsed }) => {
-  const [open, setOpen] = useState(true);
+  const [isOpen, setIsOpen] = useState(true);
   const Icon = Icons[category.icon] || Icons.Folder;
   if (category.id === 'all') return null;
   if (catTools.length === 0) return null;
@@ -13,15 +13,15 @@ const CategorySection = ({ category, tools: catTools, collapsed }) => {
   return (
     <div className="mb-1">
       <button
-        onClick={() => setOpen(!open)}
+        onClick={() => setIsOpen(!isOpen)}
         className="w-full flex items-center gap-2 px-3 py-1.5 text-xs font-bold uppercase tracking-widest text-gray-400 dark:text-gray-600 hover:text-gray-600 dark:hover:text-gray-400 transition-colors"
       >
         {!collapsed && <Icon size={12} />}
         {!collapsed && <span className="flex-1 text-left">{category.label}</span>}
-        {!collapsed && (open ? <ChevronDown size={12} /> : <ChevronRight size={12} />)}
+        {!collapsed && (isOpen ? <ChevronDown size={12} /> : <ChevronRight size={12} />)}
         {collapsed && <Icon size={16} className="mx-auto" />}
       </button>
-      {(open || !collapsed) && (
+      {isOpen && !collapsed && (
         <div className="space-y-0.5">
           {catTools.map(tool => {
             const TIcon = Icons[tool.icon] || Icons.Tool;
@@ -60,10 +60,21 @@ export default function Sidebar({ open, setOpen }) {
           bg-white dark:bg-gray-950
           border-r border-gray-100 dark:border-gray-800
           transition-all duration-300 overflow-y-auto overflow-x-hidden
-          ${open ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'}
+          ${open ? 'translate-x-0' : '-translate-x-full'}
           ${collapsed ? 'w-14' : 'w-[240px]'}
         `}
       >
+        <div className="hidden lg:flex items-center justify-between px-2 py-2 border-b border-gray-100 dark:border-gray-800">
+          {!collapsed && <span className="text-[11px] font-bold uppercase tracking-widest text-gray-400">Tools</span>}
+          <button
+            onClick={() => setCollapsed(!collapsed)}
+            className="btn-ghost p-1.5"
+            title={collapsed ? 'Expand sidebar' : 'Collapse sidebar'}
+            aria-label={collapsed ? 'Expand sidebar' : 'Collapse sidebar'}
+          >
+            {collapsed ? <ChevronsRight size={14} /> : <ChevronsLeft size={14} />}
+          </button>
+        </div>
         <div className="py-3 px-2">
           {toolCategories.filter(c => c.id !== 'all').map(cat => {
             const catTools = tools.filter(t => t.category === cat.id);
